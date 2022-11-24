@@ -1,0 +1,47 @@
+using System;
+
+public class MainClass
+{
+    public static void Main()
+    {
+        Console.WriteLine("|Введите 4 оценки|");
+        int[] mark = new int[4];
+
+        for (int i = 0; i < mark.Length; i++)
+        {
+            mark[i] = int.Parse(Console.ReadLine());
+        }
+        for (int i = 0; i < mark.Length; i++)
+        {
+            if (mark[i] == 2)
+            {
+                Console.WriteLine("Ну что, студент, пора долг Родине отдать.");
+                return;
+            }
+        }
+        for (int i = 0; i < mark.Length; i++)
+        {
+            if (mark[i] == 3)
+            {
+                Console.WriteLine("Прощай стипендия!");
+                return;
+            }
+        }
+        for (int i = 0; i < mark.Length; i++)
+        {
+            if ((mark[i] == 4) || ((mark[i] == 4) && (mark[i] == 5)))
+            {
+                Console.WriteLine("Живи пока, через полгода увидимся.");
+                return;
+            }
+        }
+        for (int i = 0; i < mark.Length; i++)
+        {
+            if (mark[i] == 5)
+            {
+                Console.WriteLine("О, отличник появился! На олимпиаду пойдешь.");
+                return;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+using System;
+
+public class MainClass
+{
+    public static void Main()
+    {
+        Console.Write("Введите слово: ");
+        string w = Console.ReadLine();
+        char[] word = w.ToCharArray();
+        foreach (char c in word)
+        {
+            Console.WriteLine(c);
+        }
+    }
+}
