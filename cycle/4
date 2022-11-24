@@ -1,0 +1,19 @@
+using System;
+
+public class MainClass
+{
+    public static void Main()
+    {
+        int h = 1, m = 10;
+        Console.Write("Введите число тиков: ");
+        int n = int.Parse(Console.ReadLine());
+        for (int i = 1; i < n; i++)
+        {
+            if (h % 2 != 0)
+                m += 6;
+            else m += 5;
+            h++;
+        }
+        Console.Write("Время: |" + h + "| : |" + m + "|");
+    }
+}
