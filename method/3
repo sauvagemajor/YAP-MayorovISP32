@@ -1,0 +1,38 @@
+using System;
+
+namespace met3
+{
+	class MainClass
+	{
+		static int[] GetCubes(int startValue, int endValue)
+		{
+			int d = endValue - startValue + 1;
+			int index = 0;
+			int[] mas = new int[d];
+
+			for(int i = startValue; i <= endValue; i++)
+			{
+				mas[index] = Convert.ToInt32(Math.Pow(i, 3));
+				index++;
+			}
+			return mas;
+		}
+
+		static void PrintSum(int[] mas)
+		{
+			int sum = 0;
+			for(int i = 0; i < mas.Length; i++)
+			{
+				sum += mas[i];
+			}
+			Console.WriteLine(sum);
+		}
+
+		static void Main()
+		{
+			int startValue = int.Parse(Console.ReadLine());
+			int endValue = int.Parse(Console.ReadLine());
+			PrintSum(GetCubes(startValue, endValue));   
+		}
+	}
+}
