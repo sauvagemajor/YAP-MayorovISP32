@@ -1,0 +1,63 @@
+using System;
+
+namespace class3
+{
+    class coordinats
+    {
+        public double xm; public double ym; public double zm;
+        public double xp; public double yp; public double zp;
+
+        public void plosk()
+        {
+            double p = Math.Sqrt(Math.Pow(xp - xm, 2) + Math.Pow(yp - ym, 2));
+            Console.WriteLine("Расстояние по плоскости: " + Math.Round(p, 5));
+        }
+
+        public void line()
+        {
+            double s = Math.Sqrt(Math.Pow(xp - xm, 2) + Math.Pow(yp - ym, 2) + Math.Pow(zp - zm, 2));
+            Console.WriteLine("Расстояние между мухой и пауком по прямой линии: " + Math.Round(s, 5));
+        }
+    }
+
+    class Program
+    {
+        public static void Main()
+        {
+            coordinats a = new coordinats();
+
+            Console.WriteLine("|Координаты мухи|");
+
+            Console.Write("|x|: ");
+            a.xm = double.Parse(Console.ReadLine());
+
+            Console.Write("|y|: ");
+            a.ym = double.Parse(Console.ReadLine());
+
+            Console.Write("|z|: ");
+            a.zm = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("|Координаты паука|");
+
+            Console.Write("|x|: ");
+            a.xp = double.Parse(Console.ReadLine());
+
+            Console.Write("|y|: ");
+            a.yp = double.Parse(Console.ReadLine());
+
+            Console.Write("|z|: ");
+            a.zp = double.Parse(Console.ReadLine());
+
+            if (a.ym == 0)
+            {
+                a.plosk();
+                a.line();
+            }
+
+            else
+            {
+                Console.Write("Данные некорректны или муха находится не на полу");
+            }
+        }
+    }
+}
