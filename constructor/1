@@ -1,0 +1,34 @@
+using System;
+
+namespace constr1
+{
+    class Program
+    {
+        public static void Main()
+        {
+            var myWatch = new Watch("Casio", "electronic", 15.99M);
+            myWatch.Print();
+        }
+    }
+
+    class Watch
+    {
+        public Watch(string firm, string lable, decimal price)
+        {
+            f = firm;
+            n = lable;
+            s = price;
+        }
+
+        private string f;
+        private string n;
+        private decimal s;
+
+        public void Print()
+        {
+            Console.WriteLine(f);
+            Console.WriteLine(n);
+            Console.WriteLine(s + "М");
+        }
+    }
+}
