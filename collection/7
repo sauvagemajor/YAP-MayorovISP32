@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+namespace col7
+{
+    class MainClass
+    {
+        public static void Main()
+        {
+            Console.Write("|Введите текст|: ");
+            string[] inputWords = Console.ReadLine().Split(' ');
+
+            List<string> words = new List<string>(inputWords);
+
+            char virus = '1';
+            bool noinf;
+
+            Console.Write("|Неизменненые слова|: ");
+
+            foreach (string word in words)
+            {
+                noinf = true;
+                foreach (char sym in word)
+                {
+                    if (sym == virus)
+                    {
+                        noinf = false;
+                    }
+                }
+
+                if (noinf)
+                {
+                    Console.Write(word + " ");
+                }
+            }
+        }
+    }
+}
