@@ -1,0 +1,48 @@
+using System;
+
+namespace clas1
+{
+    class Worker
+    {
+        public string name;
+        public string surname;
+        public int rate;
+        public int days;
+
+        public void GetFullName()
+        {
+            Console.WriteLine("\n|Вывод ФИ|");
+            Console.Write(name + " " + surname + " \n");
+        }
+
+        public int GetSalary()
+        {
+            Console.WriteLine("\n|Вывод ЗП|");
+            Console.WriteLine(rate * days);
+            return rate * days;
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Worker w1 = new Worker();
+
+            Console.Write("|Имя|: ");
+            w1.name = Console.ReadLine();
+
+            Console.Write("|Фамилия|: ");
+            w1.surname = Console.ReadLine();
+
+            Console.Write("|Ставка за день работы|: ");
+            w1.rate = int.Parse(Console.ReadLine());
+
+            Console.Write("|Количество отработанных дней|: ");
+            w1.days = int.Parse(Console.ReadLine());
+
+            w1.GetFullName();
+            w1.GetSalary();
+        }
+    }
+}
