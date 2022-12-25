@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace col2
+{
+    class MainClass
+    {
+        public static void Main()
+        {
+            Console.Write("Введите числа: ");
+            string n = Console.ReadLine();
+
+            List<int> numbers = n.Split(' ').Select(x => int.Parse(x)).Reverse().ToList();
+
+            Console.Write("Вывод: ");
+            for (int i = numbers.IndexOf(0) + 1; i < numbers.LastIndexOf(0); ++i)
+                Console.Write(numbers[i] + " ");
+        }
+    }
+}
