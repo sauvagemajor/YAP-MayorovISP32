@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+
+namespace col3
+{
+    class MainClass
+    {
+        public static void GetList(int n)
+        {
+
+            Random randoom = new Random();
+
+            int a = randoom.Next(1, 5);
+
+            if (a == 1)
+            {
+                var iint = new List<int>();
+
+                for (int i = 0; i < n; i++)
+                {
+                    iint.Add(randoom.Next(-2147483648, 2147483647));
+                }
+
+                Console.Write("|int|: ");
+                Console.WriteLine(string.Join(" ", iint));
+            }
+
+            else if (a == 2)
+            {
+                var sshort = new List<short>();
+
+                for (int i = 0; i < n; i++)
+                {
+                    sshort.Add((short)randoom.Next(-32768, 32767));
+                }
+
+                Console.Write("|short|: ");
+                Console.WriteLine(string.Join(" ", sshort));
+            }
+
+            else if (a == 3)
+            {
+                var ssbyte = new List<sbyte>();
+
+                for (int i = 0; i < n; i++)
+                {
+                    ssbyte.Add((sbyte)randoom.Next(-128, 127));
+                }
+
+                Console.Write("|sbyte|: ");
+                Console.WriteLine(string.Join(" ", ssbyte));
+            }
+
+            else
+            {
+                var cchar = new List<char>();
+
+                for (int i = 0; i < n; i++)
+                {
+                    cchar.Add((char)randoom.Next(0, 65535));
+                }
+
+                Console.Write("|char|: ");
+                Console.WriteLine(string.Join(" ", cchar));
+            }
+        }
+
+        public static void Main()
+        {
+            Console.Write("Введите n = ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            GetList(n);
+        }
+    }
+}
